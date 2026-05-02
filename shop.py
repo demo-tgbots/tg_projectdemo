@@ -32,14 +32,13 @@ def callback(call):
 
     elif call.data == 'faq':
         bot.send_message(call.message.chat.id, "Перенаправляем в информацию")
+        bot.register.next_step_handler(call.message,faqs)
 
     elif call.data in ['Кофта','Джинсы','Куртка']:
         bot.send_message(call.message.chat.id,'Какое ваше имя?')
         bot.register_next_step_handler(call.message,phone,call.data)
     elif call.data == 'back':
         start(call.message)
-    elif call.data == 'faq':
-        bot.register.next_step_handler(call.message,faqs)
 
 def katalogi(message):
     markup = types.InlineKeyboardMarkup(row_width=1)
