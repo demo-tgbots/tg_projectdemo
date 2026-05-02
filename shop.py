@@ -38,6 +38,8 @@ def callback(call):
         bot.register_next_step_handler(call.message,phone,call.data)
     elif call.data == 'back':
         start(call.message)
+    elif call.data == 'faq':
+        bot.register.next_step_handler(call.message,faqs)
 
 def katalogi(message):
     markup = types.InlineKeyboardMarkup(row_width=1)
@@ -51,7 +53,19 @@ def katalogi(message):
 
     bot.send_message(message.chat.id, "Каталог:", reply_markup=markup)
 
+def faqs(message):
+    bot.send_message(message.chat.id,'''ℹ️ О нас
 
+                        Мы — онлайн-магазин дизайнерской одежды 👕✨  
+        Предлагаем стильные и уникальные вещи от современных дизайнеров и брендов.
+
+        Каждая вещь подбирается с акцентом на качество, комфорт и индивидуальный стиль.
+
+        Мы стремимся, чтобы одежда отражала характер и выделяла тебя из толпы.
+
+🛍 Быстрый заказ  
+🚚 Удобная обработка заявок  
+💬 Поддержка 24/7''')
 def phone(message,product):
     name = message.text
     bot.send_message(message.chat.id,'Какой ваш номер телефона?') 
