@@ -1,6 +1,6 @@
 from telebot import types
 import telebot
-bot = telebot.TeleBot("8590465306:AAHmr-3TAbRjGZ2KC4D0_k3EUX4usLpl_U4")
+bot = telebot.TeleBot("8590465306:AAER-r9ek9_aHObA1d7Yf_2csCBmRrm9g2E")
 
 ADMINS = [1729484185,987654321]
 
